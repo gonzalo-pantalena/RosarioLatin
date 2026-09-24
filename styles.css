@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #272b2b;
+  --muted: #747875;
+  --paper: #f6f5ef;
+  --card: #fffdf8;
+  --line: #dcded5;
+  --sage: #738b78;
+  --sage-deep: #395449;
+  --coral: #c87561;
+  --gold: #c79b4b;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+button { font: inherit; }
+.app-shell { max-width: 1440px; margin: 0 auto; overflow: hidden; background: var(--paper); }
+.topbar { height: 88px; padding: 0 6.5vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(57,84,73,.14); }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--sage-deep); text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--sage); border-radius: 50%; font-size: 20px; }
+.brand strong, .brand small { display: block; }
+.brand strong { font-family: var(--serif); font-size: 25px; line-height: .8; letter-spacing: .02em; }
+.brand small { margin-top: 6px; color: var(--muted); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+.date-chip { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
+.hero { min-height: 610px; padding: 90px 13vw 80px; display: grid; grid-template-columns: minmax(280px, 1fr) minmax(280px, .9fr); gap: 7vw; align-items: center; background: linear-gradient(120deg, #f6f5ef 0%, #f6f5ef 57%, #e9eee5 57%, #e9eee5 100%); }
+.eyebrow { margin: 0 0 13px; color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 20px; color: var(--sage-deep); font-family: var(--serif); font-size: clamp(65px, 8vw, 116px); font-weight: 500; line-height: .78; letter-spacing: -.02em; }
+h1 em { color: var(--coral); font-style: normal; }
+.hero-intro { max-width: 350px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.today-mystery { margin: 34px 0 27px; padding-left: 15px; border-left: 2px solid var(--coral); }
+.today-mystery-label { display: block; margin-bottom: 6px; color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.today-mystery strong { display: block; color: var(--sage-deep); font-family: var(--serif); font-size: 25px; font-weight: 600; }
+.season-note { display: block; margin-top: 4px; color: var(--gold); font-size: 12px; }
+.start-button { padding: 13px 19px; border: 1px solid var(--sage-deep); border-radius: 2px; color: var(--card); background: var(--sage-deep); cursor: pointer; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transition: background .2s, transform .2s; }
+.start-button:hover { background: var(--coral); border-color: var(--coral); transform: translateY(-2px); }
+.hero-art { position: relative; min-height: 390px; }
+.halo { position: absolute; top: 31px; left: 50%; width: 280px; height: 280px; border: 1px solid rgba(57,84,73,.35); border-radius: 50%; transform: translateX(-50%); }
+.halo::before, .halo::after { content: ''; position: absolute; border: 1px solid rgba(57,84,73,.2); border-radius: 50%; }
+.halo::before { inset: 24px; } .halo::after { inset: 52px; }
+.rosary-cross { position: absolute; top: 110px; left: 50%; color: var(--coral); font-family: var(--serif); font-size: 138px; line-height: 1; transform: translateX(-50%); }
+.arc { position: absolute; border: 1px solid var(--gold); border-radius: 50%; }
+.arc-one { width: 340px; height: 340px; top: 0; left: 50%; transform: translateX(-50%) rotate(25deg); border-left-color: transparent; border-bottom-color: transparent; }
+.arc-two { width: 400px; height: 400px; top: -30px; left: 50%; transform: translateX(-50%) rotate(-35deg); border-right-color: transparent; border-bottom-color: transparent; }
+.art-caption { position: absolute; bottom: 15px; left: 50%; color: var(--sage-deep); font-family: var(--serif); font-size: 18px; font-style: italic; transform: translateX(-50%); white-space: nowrap; }
+.prayer-section, .mysteries-section { padding: 90px 13vw; }
+.prayer-section { background: var(--card); }
+.section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 38px; }
+h2 { margin-bottom: 0; color: var(--sage-deep); font-family: var(--serif); font-size: clamp(38px, 4vw, 58px); font-weight: 600; line-height: .9; }
+.prayer-kind { padding: 7px 11px; border: 1px solid var(--line); color: var(--muted); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+.prayer-layout { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 38px; }
+.mystery-rail { padding-top: 7px; }
+.rail-label { margin: 0 0 14px; color: var(--muted); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+.rail-item { display: flex; gap: 10px; margin-bottom: 16px; color: var(--muted); font-family: var(--serif); font-size: 18px; line-height: 1; cursor: default; }
+.rail-item::before { content: ''; display: block; width: 7px; height: 7px; margin-top: 5px; border: 1px solid var(--line); border-radius: 50%; }
+.rail-item.is-current { color: var(--coral); font-weight: 700; }
+.rail-item.is-current::before { border-color: var(--coral); background: var(--coral); }
+.prayer-card { min-height: 285px; padding: 29px 34px 24px; border: 1px solid var(--line); background: var(--paper); }
+.language-tabs { display: flex; gap: 20px; margin-bottom: 32px; border-bottom: 1px solid var(--line); }
+.language-tab { position: relative; padding: 0 0 12px; border: 0; color: var(--muted); background: transparent; cursor: pointer; font-size: 12px; }
+.language-tab.is-active { color: var(--sage-deep); font-weight: 700; }
+.language-tab.is-active::after { content: ''; position: absolute; right: 0; bottom: -1px; left: 0; height: 2px; background: var(--coral); }
+.prayer-text { min-height: 126px; color: var(--sage-deep); font-family: var(--serif); font-size: clamp(25px, 3vw, 38px); line-height: 1.12; }
+.prayer-text .translation { display: block; margin-top: 13px; color: var(--muted); font-family: var(--sans); font-size: 12px; line-height: 1.5; }
+.prayer-footer { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.keyboard-hint { color: var(--sage); letter-spacing: .3em; }
+.bead-map { margin: 45px 0 28px; }
+.bead-track { display: grid; grid-template-columns: repeat(5, minmax(125px, 1fr)); gap: 10px; }
+.bead-group { min-width: 0; padding: 11px 8px 12px; border: 1px solid var(--line); background: var(--paper); transition: border-color .2s, background .2s; }
+.bead-group h3 { margin: 0 0 10px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-align: center; text-transform: uppercase; }
+.bead-group-track { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 5px; min-height: 30px; }
+.bead-group.is-current { border-color: var(--coral); background: #fff8f3; }
+.bead-group.is-current h3 { color: var(--coral); }
+.bead-group.is-done { border-color: rgba(57,84,73,.4); }
+.bead { flex: 0 0 auto; width: 13px; height: 13px; border: 1px solid #bfc5bb; border-radius: 50%; background: transparent; transition: .25s; }
+.bead.major { width: 22px; height: 22px; }
+.bead.intro-bead { border-color: var(--sage); }
+.bead.intro-bead { width: 16px; height: 16px; }
+.bead.father-bead { border-color: var(--sage-deep); background: rgba(57,84,73,.16); }
+.bead.glory-bead { border-color: var(--gold); background: rgba(199,155,75,.2); }
+.bead.fatima-bead { border-color: var(--coral); background: rgba(200,117,97,.18); }
+.bead.done { background: currentColor; }
+.bead.hail-bead { color: var(--sage); }
+.bead.father-bead { color: var(--sage-deep); }
+.bead.glory-bead { color: var(--gold); }
+.bead.fatima-bead { color: var(--coral); }
+.bead.current { box-shadow: 0 0 0 5px rgba(200,117,97,.15); border-color: var(--coral); background: var(--coral); }
+.bead-legend { display: flex; justify-content: center; gap: 22px; margin-top: 13px; color: var(--muted); font-size: 10px; }
+.legend-dot { display: inline-block; width: 7px; height: 7px; margin-right: 5px; border: 1px solid #bfc5bb; border-radius: 50%; vertical-align: 1px; }
+.active-dot { border-color: var(--sage); background: var(--sage); }
+.step-controls { display: flex; justify-content: center; gap: 15px; }
+.round-control { display: grid; place-items: center; width: 50px; height: 50px; border: 1px solid var(--sage); border-radius: 50%; color: var(--sage-deep); background: transparent; cursor: pointer; font-size: 30px; line-height: 1; transition: .2s; }
+.round-control:hover:not(:disabled) { color: white; background: var(--sage-deep); transform: translateY(-2px); }
+.round-control:disabled { cursor: not-allowed; opacity: .3; }
+.next-control { color: white; background: var(--coral); border-color: var(--coral); }
+.mysteries-section { background: #e8ede5; }
+.mysteries-heading { margin-bottom: 35px; }
+.mysteries-date { margin: 0; color: var(--muted); font-size: 12px; }
+.mystery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.mystery-card { min-height: 315px; padding: 12px; border: 1px solid rgba(57,84,73,.18); background: rgba(255,253,248,.65); }
+.mystery-card.is-current { border-color: var(--coral); background: var(--card); }
+.mystery-image { position: relative; height: 160px; margin-bottom: 18px; display: grid; place-items: center; border: 1px dashed #bdc6bb; background: #f0f2ec; color: #9ca99c; font-size: 10px; letter-spacing: .12em; text-align: center; text-transform: uppercase; }
+.mystery-image::before { content: '✣'; position: absolute; color: #cad2c8; font-family: var(--serif); font-size: 50px; }
+.mystery-image span { position: relative; margin-top: 80px; }
+.mystery-index { color: var(--coral); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
+.mystery-card h3 { margin: 5px 0 8px; color: var(--sage-deep); font-family: var(--serif); font-size: 23px; line-height: .95; }
+.mystery-verse { margin: 0; color: var(--muted); font-family: var(--serif); font-size: 14px; font-style: italic; line-height: 1.2; }
+.footer { display: flex; justify-content: space-between; padding: 25px 6.5vw; color: var(--muted); background: var(--paper); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.footer span:first-child { color: var(--sage-deep); font-family: var(--serif); font-size: 17px; font-weight: 700; letter-spacing: 0; text-transform: none; }
+@media (max-width: 800px) {
+  .topbar { height: 74px; padding: 0 6vw; }
+  .hero { padding: 70px 9vw; grid-template-columns: 1fr; min-height: auto; }
+  .hero-art { min-height: 300px; margin-top: 12px; }
+  .halo { width: 220px; height: 220px; } .arc-one { width: 275px; height: 275px; } .arc-two { width: 320px; height: 320px; }
+  .rosary-cross { top: 85px; font-size: 105px; }
+  .prayer-section, .mysteries-section { padding: 70px 7vw; }
+  .prayer-layout { grid-template-columns: 1fr; gap: 22px; }
+  .mystery-rail { display: flex; gap: 15px; align-items: center; overflow-x: auto; padding: 0 0 4px; }
+  .rail-label { display: none; } .rail-item { margin: 0; white-space: nowrap; }
+  .mystery-grid { grid-template-columns: repeat(2, 1fr); }
+  .mystery-card:last-child { grid-column: span 2; }
+}
+@media (max-width: 480px) {
+  .date-chip { display: none; }
+  .hero { padding-right: 7vw; padding-left: 7vw; }
+  .prayer-card { padding: 24px 20px 20px; }
+  .section-heading { align-items: start; flex-direction: column; gap: 18px; }
+  .mystery-grid { grid-template-columns: 1fr; } .mystery-card:last-child { grid-column: auto; }
+  .mystery-image { height: 140px; }
+  .footer { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .bead-track { grid-template-columns: 1fr; gap: 8px; }
+  .bead-group { padding: 12px 11px 14px; }
+  .bead-group h3 { margin-bottom: 11px; text-align: left; }
+  .bead-group-track { justify-content: flex-start; gap: 7px; }
+}

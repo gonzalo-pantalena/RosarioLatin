@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rosario bilingüe para orar en latín y castellano.">
+  <title>Rosarium | Rosario para orar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Rosarium, inicio">
+        <span class="brand-mark" aria-hidden="true">✣</span>
+        <span><strong>Rosarium</strong><small>oración contemplativa</small></span>
+      </a>
+      <div class="date-chip">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="todayLabel">Hoy</span>
+      </div>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">Ad Iesum per Mariam</p>
+        <h1>El santo<br><em>Rosario</em></h1>
+        <p class="hero-intro">Una pausa para contemplar, palabra a palabra, los misterios de la vida de Cristo.</p>
+        <div class="today-mystery">
+          <span class="today-mystery-label">Misterios de hoy</span>
+          <strong id="mysteryGroup">Cargando...</strong>
+          <span id="seasonNote" class="season-note"></span>
+        </div>
+        <button class="start-button" id="startButton" type="button">Comenzar oración <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="halo"></div>
+        <div class="rosary-cross">✣</div>
+        <div class="arc arc-one"></div>
+        <div class="arc arc-two"></div>
+        <span class="art-caption">Ora et contempla</span>
+      </div>
+    </section>
+
+    <section class="prayer-section" id="oracion" aria-labelledby="prayerTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Paso <span id="stepNumber">1</span> de <span id="stepTotal">1</span></p>
+          <h2 id="prayerTitle">Señal de la cruz</h2>
+        </div>
+        <span class="prayer-kind" id="prayerKind">Inicio</span>
+      </div>
+
+      <div class="prayer-layout">
+        <aside class="mystery-rail" aria-label="Misterios del Rosario">
+          <p class="rail-label">Camino de hoy</p>
+          <div id="mysteryRail"></div>
+        </aside>
+
+        <div class="prayer-card">
+          <div class="language-tabs" role="tablist" aria-label="Idioma de la oración">
+            <button class="language-tab is-active" type="button" role="tab" aria-selected="true" data-language="latin">Latín</button>
+            <button class="language-tab" type="button" role="tab" aria-selected="false" data-language="spanish">Castellano</button>
+          </div>
+          <div class="prayer-text" id="prayerText" aria-live="polite"></div>
+          <div class="prayer-footer">
+            <span id="prayerCounter">Preparado para comenzar</span>
+            <span class="keyboard-hint">← →</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bead-map" aria-label="Progreso del Rosario">
+        <div class="bead-track" id="beadTrack"></div>
+        <div class="bead-legend"><span><i class="legend-dot active-dot"></i> Completado</span><span><i class="legend-dot"></i> Pendiente</span></div>
+      </div>
+
+      <nav class="step-controls" aria-label="Controles de oración">
+        <button class="round-control" id="previousButton" type="button" aria-label="Oración anterior" title="Oración anterior"><span aria-hidden="true">‹</span></button>
+        <button class="round-control next-control" id="nextButton" type="button" aria-label="Siguiente oración" title="Siguiente oración"><span aria-hidden="true">›</span></button>
+      </nav>
+    </section>
+
+    <section class="mysteries-section" id="misterios" aria-labelledby="mysteriesTitle">
+      <div class="section-heading mysteries-heading">
+        <div>
+          <p class="eyebrow">Contemplación</p>
+          <h2 id="mysteriesTitle">Los misterios de hoy</h2>
+        </div>
+        <p class="mysteries-date" id="mysteriesDate"></p>
+      </div>
+      <div class="mystery-grid" id="mysteryGrid"></div>
+    </section>
+
+    <footer class="footer">
+      <span>Rosarium</span><span>Ora con calma · Contempla con el corazón</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
